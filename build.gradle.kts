@@ -1,7 +1,6 @@
 plugins {
     kotlin("jvm") version "1.8.0"
     application
-    id("org.openjfx.javafxplugin") version "0.0.8"
 }
 
 group = "org.blossom"
@@ -13,9 +12,10 @@ repositories {
 
 dependencies {
     implementation("com.alphacephei:vosk:0.3.45")
-    implementation("com.orctom:vad4j:1.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-Beta")
-    implementation("no.tornado:tornadofx:1.7.20")
+    implementation("com.aallam.openai:openai-client:3.2.0")
+    implementation("io.ktor:ktor-client-okhttp:2.2.4")
+    implementation("com.tinder.statemachine:statemachine:0.2.0")
 }
 
 kotlin {

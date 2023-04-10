@@ -1,4 +1,4 @@
-package console.commands
+package console
 
 import sound.HeyBlossom
 import kotlinx.coroutines.*
@@ -59,7 +59,7 @@ object Commands {
         executeCommand(command, arguments)
     }
 
-    private suspend fun executeCommand(command: String?, arguments: List<String>) {
+    suspend fun executeCommand(command: String?, arguments: List<String>) {
         commands[command] ?.run(arguments)
     }
 }
