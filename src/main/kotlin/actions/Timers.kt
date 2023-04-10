@@ -1,6 +1,6 @@
 package actions
 
-import console.Commands
+import app.Commands
 
 object Timers {
     init {

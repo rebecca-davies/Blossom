@@ -17,6 +17,7 @@ dependencies {
     implementation("io.ktor:ktor-client-okhttp:2.2.4")
     implementation("com.tinder.statemachine:statemachine:0.2.0")
     implementation("org.yaml:snakeyaml:2.0")
+    implementation("com.google.cloud:google-cloud-texttospeech:2.15.0")
     runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.8.20")
 }
 

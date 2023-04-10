@@ -1,10 +1,7 @@
-package console
+package app
 
-import sound.HeyBlossom
 import kotlinx.coroutines.*
-import org.jetbrains.annotations.Nullable
 import javax.sound.sampled.AudioSystem
-import kotlin.reflect.typeOf
 
 class Command {
     private var name: String = ""
