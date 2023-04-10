@@ -47,18 +47,19 @@ class HeyBlossom {
         targetLine.start()
 
         val emptyAir = 1.5
+        var lastResult = ""
+
         while (true) {
             val bytesRead = targetLine.read(data, 0, data.size)
-            var lastResult = ""
 
             if (bytesRead > 0 && recognizer.acceptWaveForm(data, bytesRead)) {
                 val result = recognizer.result ?: ""
                 if(lastResult == result && result.contains("hey blossom", true)) {
                     callbacks.onMessage(lastResult.lowercase().substringAfter("hey blossom"))
                 }
+                lastResult = result
             }
-
-            delay((emptyAir * 1000).roundToLong())
+            //delay((emptyAir * 1000).roundToLong())
         }
     }
 }
