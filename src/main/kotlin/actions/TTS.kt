@@ -8,6 +8,7 @@ import javax.sound.sampled.*
 
 object TTS {
     init {
+
         Commands.addCommand("response") {
             val text = it[0] ?: "error"
             println("Response: $text")

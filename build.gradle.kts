@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.bsh.commands.dir
+
 plugins {
     kotlin("jvm") version "1.8.0"
     application
@@ -8,6 +10,9 @@ version = "1"
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs("libs")
+    }
 }
 
 dependencies {
@@ -18,6 +23,7 @@ dependencies {
     implementation("com.tinder.statemachine:statemachine:0.2.0")
     implementation("org.yaml:snakeyaml:2.0")
     implementation("com.google.cloud:google-cloud-texttospeech:2.15.0")
+    implementation(files("/lib/elevenlabs-api-1.1-SNAPSHOT-full.jar"))
     runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.8.20")
 }
 

@@ -12,7 +12,7 @@ import org.vosk.LogLevel
 
 
 suspend fun main() {
-    TTS
+    TTS2
     Timers
 
     val interpreter = Interpreter()
