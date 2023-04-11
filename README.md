@@ -1,6 +1,10 @@
 # Blossom - Personal Assistant
 
-Blossom is a personal assistant built in Kotlin that aims to replace other personal assistants like Siri. Blossom captures voice activity using the VOSK API to transcribe it, which then interfaces with the ChatGPT 3.5 turbo model, which replies through an interpreter. A voice is then generated using Google Clouds TTS API and played back through the speakers. It currently has support for all ChatGPT features, other features that are unavailable to ChatGPT will be interfaced with and a response will be generated.
+Blossom is a personal assistant built in Kotlin that aims to replace other personal assistants like Siri. 
+
+Blossom captures voice activity using the VOSK API to transcribe it, which then interfaces with the ChatGPT 3.5 turbo model, which replies through an interpreter. A voice is then generated using Google Clouds TTS API and played back through the speakers. 
+
+It currently has support for all ChatGPT features, other features that are unavailable to ChatGPT will be interfaced with externally and a response will be generated.
 
 ## Table of Contents
 
