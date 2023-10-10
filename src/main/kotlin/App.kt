@@ -1,6 +1,7 @@
 import api.*
 import api.time.CurrentTime
 import api.time.Timer
+import api.weather.Weather
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.fasterxml.jackson.module.kotlin.KotlinModule
@@ -17,6 +18,7 @@ object ApiContainer {
     lateinit var elevenlabs: ElevenLabs
     lateinit var timer: Timer
     lateinit var currenttime: CurrentTime
+    lateinit var weather: Weather
 
     /**
      * Sets the property of ApiContainer with the provided name to the given API instance.
