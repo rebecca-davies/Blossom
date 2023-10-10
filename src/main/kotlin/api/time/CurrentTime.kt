@@ -27,21 +27,12 @@ class CurrentTime : Api {
      *
      * @param msg Ignored in this implementation.
      */
-    override fun message(msg: String) {
+    override fun handle(msg: String) {
         // Format the current time in 12-hour clock format with AM or PM.
         val formatter = DateTimeFormatter.ofPattern("hh:mm a")
         val current = LocalDateTime.now().format(formatter)
 
         // Send a message with the current time.
-        ApiContainer.elevenlabs.message("It's $current")
-    }
-
-    /**
-     * Response handler (not implemented).
-     *
-     * @param msg Ignored in this implementation.
-     */
-    override fun response(msg: String) {
-        // Not implemented for this class
+        ApiContainer.elevenlabs.handle("It's $current")
     }
 }

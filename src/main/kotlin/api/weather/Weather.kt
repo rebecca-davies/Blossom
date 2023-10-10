@@ -28,7 +28,7 @@ class Weather : Api {
      * Processes a message related to weather.
      * @param msg The incoming message.
      */
-    override fun message(msg: String) {
+    override fun handle(msg: String) {
         val objectMapper = ObjectMapper()
 
         // Fetch user location
@@ -40,15 +40,7 @@ class Weather : Api {
         val temperature = parseTemperature(weatherJSON)
 
         // Display temperature message
-        ApiContainer.elevenlabs.message("It's currently ${temperature.roundToInt()} degrees outside.")
-    }
-
-    /**
-     * Handles the response logic.
-     * @param msg The response message.
-     */
-    override fun response(msg: String) {
-        // Handle response logic if needed
+        ApiContainer.elevenlabs.handle("It's currently ${temperature.roundToInt()} degrees outside.")
     }
 
     /**

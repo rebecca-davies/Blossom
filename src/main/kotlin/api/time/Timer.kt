@@ -51,7 +51,7 @@ class Timer : Api {
      * @param msg The input message containing timer-related information.
      */
     @OptIn(DelicateCoroutinesApi::class)
-    override fun message(msg: String) {
+    override fun handle(msg: String) {
         if(msg.contains("how much time is left", ignoreCase = true)) {
             checkTimers()
             return
@@ -64,7 +64,7 @@ class Timer : Api {
                 player.play()
             }
             activeTimers.add(TimerInfo(timerJob!!, duration, System.currentTimeMillis()))
-            ApiContainer.elevenlabs.message("A timer has been set for $jobLength.")
+            ApiContainer.elevenlabs.handle("A timer has been set for $jobLength.")
         }
     }
 
@@ -80,15 +80,6 @@ class Timer : Api {
             val message = if (formattedTime != "finished") "Your timer has $formattedTime left" else "Your timer has finished"
             log.info(message)
         }
-    }
-
-    /**
-     * Response handler for timer-related messages (not implemented).
-     *
-     * @param msg The input message containing timer-related information.
-     */
-    override fun response(msg: String) {
-        // Not implemented for this class
     }
 
     /**

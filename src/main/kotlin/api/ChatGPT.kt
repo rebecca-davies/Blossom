@@ -40,7 +40,7 @@ class ChatGPT : Api {
      * @param msg The input message for natural language processing.
      */
     @OptIn(BetaOpenAI::class)
-    override fun message(msg: String) = runBlocking {
+    override fun handle(msg: String) = runBlocking {
         log.info("Sending message: $msg")
 
         // Constructing a conversation with a user message
@@ -60,17 +60,7 @@ class ChatGPT : Api {
             }
         }
 
-        // Processing the response
-        response(chatResponse)
-    }
-
-    /**
-     * Response handler for the output of the natural language processing.
-     * Logs the received response and sends it to a downstream system (ApiContainer.elevenlabs).
-     *
-     * @param msg The processed message from the natural language processing.
-     */
-    override fun response(msg: String) = runBlocking {
-        ApiContainer.elevenlabs.message(msg)
+        // Generate response through elevenlabs
+        ApiContainer.elevenlabs.handle(msg)
     }
 }

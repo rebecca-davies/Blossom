@@ -64,11 +64,11 @@ class Vosk {
 
                     with(result) {
                         when {
-                            contains("set a timer") -> ApiContainer.timer.message(result)
-                            contains("how much time is left") -> ApiContainer.timer.message(result)
-                            contains("what time is it") -> ApiContainer.currenttime.message(result)
-                            contains("what temperature") -> ApiContainer.weather.message(result)
-                            else -> ApiContainer.openai.message(result)
+                            contains("set a timer") -> ApiContainer.timer.handle(result)
+                            contains("how much time is left") -> ApiContainer.timer.handle(result)
+                            contains("what time is it") -> ApiContainer.currenttime.handle(result)
+                            contains("what temperature") -> ApiContainer.weather.handle(result)
+                            else -> ApiContainer.openai.handle(result)
                         }
                     }
                 }

@@ -46,12 +46,5 @@ interface Api {
      *
      * @param msg The input message to be processed by the API.
      */
-    fun message(msg: String)
-
-    /**
-     * Response handler for the API.
-     *
-     * @param msg The response message from the API.
-     */
-    fun response(msg: String)
+    fun handle(msg: String)
 }

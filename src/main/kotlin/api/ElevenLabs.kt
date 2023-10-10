@@ -34,7 +34,7 @@ class ElevenLabs : Api {
      *
      * @param msg The input message for voice generation.
      */
-    override fun message(msg: String) {
+    override fun handle(msg: String) {
         // Checking if ElevenLabs API is enabled and log response in text instead
         if (AppConfig.availableApis.api["elevenlabs"]?.enabled == false) {
             log.info(msg)
@@ -54,14 +54,5 @@ class ElevenLabs : Api {
         // Playing the generated voice using AdvancedPlayer
         val player = AdvancedPlayer(inputStream)
         player.play()
-    }
-
-    /**
-     * Response handler for the ElevenLabs API (not implemented).
-     *
-     * @param msg The input message for the response (not used in this implementation).
-     */
-    override fun response(msg: String) = runBlocking {
-        // Not implemented for this class
     }
 }
