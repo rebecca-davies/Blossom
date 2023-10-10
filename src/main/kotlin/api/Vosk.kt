@@ -62,11 +62,13 @@ class Vosk {
                     result = result.substringAfter("hey blossom ")
                     log.info(result)
 
-                    // Handling specific commands based on recognized speech
-                    if (result.contains("set a timer", ignoreCase = true) || result.contains("set the timer", ignoreCase = true) || result.contains("how much time is left", ignoreCase = true)) {
-                        ApiContainer.timer.message(result)
-                    } else {
-                        ApiContainer.openai.message(result)
+                    with(result) {
+                        when {
+                            contains("set a timer") -> ApiContainer.timer.message(result)
+                            contains("how much time is left") -> ApiContainer.timer.message(result)
+                            contains("what time is it") -> ApiContainer.currenttime.message(result)
+                            else -> ApiContainer.openai.message(result)
+                        }
                     }
                 }
             }

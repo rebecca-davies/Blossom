@@ -21,6 +21,11 @@ class ElevenLabs : Api {
 
         // Setting the API key for ElevenLabs
         ElevenLabs.setApiKey(AppConfig.availableApis.api["elevenlabs"]?.key!!)
+
+        //Display warning if the API is disabled
+        if (AppConfig.availableApis.api["elevenlabs"]?.enabled == false) {
+            log.warning("ElevenLabs API is set to disabled")
+        }
     }
 
     /**
@@ -30,9 +35,9 @@ class ElevenLabs : Api {
      * @param msg The input message for voice generation.
      */
     override fun message(msg: String) {
-        // Checking if ElevenLabs API is enabled
+        // Checking if ElevenLabs API is enabled and log response in text instead
         if (AppConfig.availableApis.api["elevenlabs"]?.enabled == false) {
-            log.info("ElevenLabs API is set to disabled")
+            log.info(msg)
             return
         }
 

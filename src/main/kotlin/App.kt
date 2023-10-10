@@ -1,4 +1,5 @@
 import api.*
+import api.time.CurrentTime
 import api.time.Timer
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
@@ -15,6 +16,7 @@ object ApiContainer {
     lateinit var openai: ChatGPT
     lateinit var elevenlabs: ElevenLabs
     lateinit var timer: Timer
+    lateinit var currenttime: CurrentTime
 
     /**
      * Sets the property of ApiContainer with the provided name to the given API instance.
@@ -44,6 +46,7 @@ fun main() {
 
     // Loading configuration and initiating Vosk speech recognition
     loadConfig()
+    log.info("Loading VOSK speech recognition model")
     Vosk().listen()
 }
 

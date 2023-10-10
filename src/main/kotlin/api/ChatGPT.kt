@@ -71,7 +71,6 @@ class ChatGPT : Api {
      * @param msg The processed message from the natural language processing.
      */
     override fun response(msg: String) = runBlocking {
-        log.info("Received response: $msg")
         ApiContainer.elevenlabs.message(msg)
     }
 }
