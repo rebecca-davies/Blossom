@@ -39,6 +39,24 @@ We welcome contributions to Blossom! To contribute to the project, follow these 
    ```git push origin my-feature-branch```
 7. Create a pull request from your forked repository to the main repository
 
+## Currently Supported
+
+Try ask Blossom some of these questions
+
+***Hey Blossom, what's the temperature outside?***
+
+***Hey Blossom, set a timer for 10 minutes?***
+
+***Hey Blossom, how much time is left on my timer?***
+
+***Hey Blossom, what time is it right now?***
+
+***Hey Blossom, what's 1295 x 5181 ÷ 12***
+
+***Hey Blossom, what time does Domino's close?***
+
+Blossom can handle any question with the integration of ChatGPT and access to other APIs.
+
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
