@@ -11,6 +11,7 @@ It currently has support for all ChatGPT features, other features that are unava
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Support](#support)
 - [License](#license)
 
 ## Installation
@@ -39,7 +40,7 @@ We welcome contributions to Blossom! To contribute to the project, follow these 
    ```git push origin my-feature-branch```
 7. Create a pull request from your forked repository to the main repository
 
-## Currently Supported
+## Support
 
 Try ask Blossom some of these questions
 
